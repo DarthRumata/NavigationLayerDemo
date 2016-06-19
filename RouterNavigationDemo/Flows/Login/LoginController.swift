@@ -15,8 +15,12 @@ class LoginController: UIViewController {
   
   @IBAction func performLogin(sender: AnyObject) {
     UserSessionDemo.login(username: usernameField.text!) { [weak self] (session, error) in
+      guard let _self = self else {
+        return
+      }
+      
       if let session = session {
-        //TODO: go to main
+        TransactionsFactory.mainTabBarScreenTransaction(_self.view.window!, userSession: session).perform()
       } else if let error = error {
         print(error)
       }
@@ -24,7 +28,7 @@ class LoginController: UIViewController {
   }
   
   @IBAction func dismiss(sender: AnyObject) {
-    
+    dismissViewControllerAnimated(true, completion: nil)
   }
 
 }

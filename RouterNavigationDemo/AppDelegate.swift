@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow()
     window!.backgroundColor = .whiteColor()
+    
+    if let userSession = UserSessionDemo.restoreSession() {
+      TransactionsFactory.mainTabBarScreenTransaction(window!, userSession: userSession).perform()
+    } else {
+      TransactionsFactory.welcomeScreenTransaction(window!).perform()
+    }
+    
     window!.makeKeyAndVisible()
     
     return true

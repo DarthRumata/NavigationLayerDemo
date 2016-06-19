@@ -11,10 +11,13 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
   
+  var userSession: UserSessionDemo!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-   //TODO: Add tabs
+    TransactionsFactory.feedScreenTransaction(self).perform()
+    TransactionsFactory.profileScreenTransaction(self, userSession: userSession).perform()
   }
   
 }

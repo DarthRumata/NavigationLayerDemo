@@ -10,17 +10,12 @@ import UIKit
 
 class WelcomeController: UIViewController {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-
   @IBAction func presentLogin(sender: AnyObject) {
-   
+   TransactionsFactory.loginScreenTransaction(self).perform()
   }
   
   @IBAction func presentSignUp(sender: AnyObject) {
-   
+   TransactionsFactory.signUpScreenTransaction(self).perform()
   }
   
 }

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		92BAEBF11D169B7D0005B769 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBF01D169B7D0005B769 /* FeedController.swift */; };
+		92BAEBF51D16CD720005B769 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBF41D16CD720005B769 /* Transaction.swift */; };
+		92BAEBF71D16CF250005B769 /* TransactionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBF61D16CF250005B769 /* TransactionsFactory.swift */; };
+		92BAEBF91D16D3A50005B769 /* WelcomeScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBF81D16D3A50005B769 /* WelcomeScreenTransaction.swift */; };
+		92BAEBFB1D16D51B0005B769 /* MainTabBarScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBFA1D16D51B0005B769 /* MainTabBarScreenTransaction.swift */; };
+		92BAEBFD1D16DBC40005B769 /* LoginScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBFC1D16DBC40005B769 /* LoginScreenTransaction.swift */; };
+		92BAEBFF1D16DF650005B769 /* SignUpScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEBFE1D16DF650005B769 /* SignUpScreenTransaction.swift */; };
+		92BAEC011D1748600005B769 /* ProfileScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC001D1748600005B769 /* ProfileScreenTransaction.swift */; };
+		92BAEC031D1748F20005B769 /* FeedScreenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC021D1748F20005B769 /* FeedScreenTransaction.swift */; };
 		92DF7B8D1D12FA560001C6BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF7B8C1D12FA560001C6BF /* AppDelegate.swift */; };
 		92DF7BA91D13E61B0001C6BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DF7BA21D13E61B0001C6BF /* Assets.xcassets */; };
 		92DF7BB41D13E7C20001C6BF /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF7BB31D13E7C20001C6BF /* WelcomeController.swift */; };
@@ -29,6 +37,14 @@
 
 /* Begin PBXFileReference section */
 		92BAEBF01D169B7D0005B769 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		92BAEBF41D16CD720005B769 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		92BAEBF61D16CF250005B769 /* TransactionsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsFactory.swift; sourceTree = "<group>"; };
+		92BAEBF81D16D3A50005B769 /* WelcomeScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenTransaction.swift; sourceTree = "<group>"; };
+		92BAEBFA1D16D51B0005B769 /* MainTabBarScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarScreenTransaction.swift; sourceTree = "<group>"; };
+		92BAEBFC1D16DBC40005B769 /* LoginScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenTransaction.swift; sourceTree = "<group>"; };
+		92BAEBFE1D16DF650005B769 /* SignUpScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenTransaction.swift; sourceTree = "<group>"; };
+		92BAEC001D1748600005B769 /* ProfileScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScreenTransaction.swift; path = ../FeedModule/ProfileScreenTransaction.swift; sourceTree = "<group>"; };
+		92BAEC021D1748F20005B769 /* FeedScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedScreenTransaction.swift; sourceTree = "<group>"; };
 		92DF7B891D12FA560001C6BF /* RouterNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouterNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DF7B8C1D12FA560001C6BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92DF7BA21D13E61B0001C6BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +108,8 @@
 		92DF7B9E1D13E61B0001C6BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				92BAEBF41D16CD720005B769 /* Transaction.swift */,
+				92BAEBF61D16CF250005B769 /* TransactionsFactory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -121,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF7BDA1D14354D0001C6BF /* LoginController.swift */,
+				92BAEBFC1D16DBC40005B769 /* LoginScreenTransaction.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -139,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF7BDC1D1435970001C6BF /* SignUpController.swift */,
+				92BAEBFE1D16DF650005B769 /* SignUpScreenTransaction.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -147,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF7BB31D13E7C20001C6BF /* WelcomeController.swift */,
+				92BAEBF81D16D3A50005B769 /* WelcomeScreenTransaction.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -186,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				92BAEBF01D169B7D0005B769 /* FeedController.swift */,
+				92BAEC021D1748F20005B769 /* FeedScreenTransaction.swift */,
 			);
 			path = FeedModule;
 			sourceTree = "<group>";
@@ -194,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF7BEF1D15B6190001C6BF /* ProfileController.swift */,
+				92BAEC001D1748600005B769 /* ProfileScreenTransaction.swift */,
 				92DF7BF11D15B62D0001C6BF /* LogoutCell.swift */,
 			);
 			path = ProfileModule;
@@ -203,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF7BE91D1449760001C6BF /* MainTabBarController.swift */,
+				92BAEBFA1D16D51B0005B769 /* MainTabBarScreenTransaction.swift */,
 			);
 			path = TabBarModule;
 			sourceTree = "<group>";
@@ -281,16 +305,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BAEC031D1748F20005B769 /* FeedScreenTransaction.swift in Sources */,
 				92DF7BDD1D1435970001C6BF /* SignUpController.swift in Sources */,
 				92DF7BB41D13E7C20001C6BF /* WelcomeController.swift in Sources */,
+				92BAEBFF1D16DF650005B769 /* SignUpScreenTransaction.swift in Sources */,
 				92DF7BDB1D14354D0001C6BF /* LoginController.swift in Sources */,
+				92BAEBF71D16CF250005B769 /* TransactionsFactory.swift in Sources */,
+				92BAEBFD1D16DBC40005B769 /* LoginScreenTransaction.swift in Sources */,
 				92DF7BD11D13F7540001C6BF /* StateCoder.swift in Sources */,
 				92DF7BD51D13FDFB0001C6BF /* UserSessionPathBuilder.swift in Sources */,
+				92BAEBF51D16CD720005B769 /* Transaction.swift in Sources */,
 				92DF7BF01D15B6190001C6BF /* ProfileController.swift in Sources */,
 				92DF7B8D1D12FA560001C6BF /* AppDelegate.swift in Sources */,
+				92BAEBFB1D16D51B0005B769 /* MainTabBarScreenTransaction.swift in Sources */,
 				92BAEBF11D169B7D0005B769 /* FeedController.swift in Sources */,
 				92DF7BEB1D1449760001C6BF /* MainTabBarController.swift in Sources */,
 				92DF7BC81D13ECE30001C6BF /* UserSession.swift in Sources */,
+				92BAEBF91D16D3A50005B769 /* WelcomeScreenTransaction.swift in Sources */,
+				92BAEC011D1748600005B769 /* ProfileScreenTransaction.swift in Sources */,
 				92DF7BF21D15B62D0001C6BF /* LogoutCell.swift in Sources */,
 				92DF7BCD1D13F1D30001C6BF /* User.swift in Sources */,
 			);
