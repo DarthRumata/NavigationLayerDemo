@@ -11,13 +11,10 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
   
-   var router: MainTabBarRouterInterface!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    router.addFeedTab()
-    router.addProfileTab()
+   //TODO: Add tabs
   }
   
 }

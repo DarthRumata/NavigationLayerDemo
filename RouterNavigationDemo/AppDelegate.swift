@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow()
     window!.backgroundColor = .whiteColor()
     window!.makeKeyAndVisible()
-    StartupRouter().execute(window!)
     
     return true
   }

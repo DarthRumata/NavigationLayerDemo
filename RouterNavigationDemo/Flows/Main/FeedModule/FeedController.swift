@@ -11,8 +11,6 @@ import UIKit
 
 class FeedController: UIViewController {
   
-  var router: FeedRouterInterface!
-  
   @IBOutlet private weak var collectionView: UICollectionView!
   
 }
