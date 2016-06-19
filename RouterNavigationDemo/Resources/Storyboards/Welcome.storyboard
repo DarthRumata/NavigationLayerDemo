@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sSy-7q-arx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome Controller-->
+        <scene sceneID="Joh-O0-e2C">
+            <objects>
+                <viewController id="sSy-7q-arx" customClass="WelcomeController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Y2-LS-V02"/>
+                        <viewControllerLayoutGuide type="bottom" id="CM7-0x-Ef4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YZ6-WU-fzs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to greeting page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-YU-HDG">
+                                <rect key="frame" x="45" y="75" width="510" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRB-nD-Xsz">
+                                <rect key="frame" x="274" y="166" width="52" height="30"/>
+                                <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="presentSignUp:" destination="sSy-7q-arx" eventType="touchUpInside" id="1EE-mQ-Rrl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgT-g4-9oM">
+                                <rect key="frame" x="281" y="116" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="presentLogin:" destination="sSy-7q-arx" eventType="touchUpInside" id="DXA-v2-GSp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xIZ-YU-HDG" firstAttribute="leading" secondItem="YZ6-WU-fzs" secondAttribute="leading" constant="45" id="GIH-Jr-4Sx"/>
+                            <constraint firstItem="QRB-nD-Xsz" firstAttribute="centerX" secondItem="AgT-g4-9oM" secondAttribute="centerX" id="Jck-Xy-YOl"/>
+                            <constraint firstItem="AgT-g4-9oM" firstAttribute="centerX" secondItem="xIZ-YU-HDG" secondAttribute="centerX" id="cYA-b9-5sJ"/>
+                            <constraint firstItem="QRB-nD-Xsz" firstAttribute="top" secondItem="AgT-g4-9oM" secondAttribute="bottom" constant="20" id="eQs-ZC-CXl"/>
+                            <constraint firstItem="AgT-g4-9oM" firstAttribute="top" secondItem="xIZ-YU-HDG" secondAttribute="bottom" constant="20" id="u8a-hb-dy1"/>
+                            <constraint firstAttribute="trailing" secondItem="xIZ-YU-HDG" secondAttribute="trailing" constant="45" id="ufO-KN-NjP"/>
+                            <constraint firstItem="xIZ-YU-HDG" firstAttribute="top" secondItem="5Y2-LS-V02" secondAttribute="bottom" constant="55" id="xKs-dR-oTH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUR-ts-0Xw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413" y="471"/>
+        </scene>
+    </scenes>
+</document>
