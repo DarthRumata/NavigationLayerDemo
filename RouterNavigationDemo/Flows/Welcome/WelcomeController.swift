@@ -9,8 +9,6 @@
 import UIKit
 
 class WelcomeController: UIViewController {
-  
-  var router: WelcomeRouterInterface!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,11 +16,11 @@ class WelcomeController: UIViewController {
   }
 
   @IBAction func presentLogin(sender: AnyObject) {
-    router.presentLoginModule()
+   
   }
   
   @IBAction func presentSignUp(sender: AnyObject) {
-    router.presentSignUpModule()
+   
   }
   
 }

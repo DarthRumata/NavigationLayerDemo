@@ -11,14 +11,12 @@ import UIKit
 
 class LoginController: UIViewController {
   
-  var router: LoginRouterInterface!
-  
   @IBOutlet private weak var usernameField: UITextField!
   
   @IBAction func performLogin(sender: AnyObject) {
     UserSessionDemo.login(username: usernameField.text!) { [weak self] (session, error) in
       if let session = session {
-        self?.router.presentMainTabBarModule(with: session)
+        //TODO: go to main
       } else if let error = error {
         print(error)
       }
@@ -26,7 +24,7 @@ class LoginController: UIViewController {
   }
   
   @IBAction func dismiss(sender: AnyObject) {
-    router.dismiss()
+    
   }
 
 }

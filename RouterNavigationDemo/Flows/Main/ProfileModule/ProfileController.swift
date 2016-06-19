@@ -11,7 +11,6 @@ import UIKit
 
 class ProfileController: UIViewController {
   
-  var router: ProfileRouterInterface!
   weak var userSession: UserSessionDemo!
   
   @IBOutlet private weak var tableView: UITableView!
@@ -40,7 +39,7 @@ extension ProfileController: UITableViewDataSource, UITableViewDelegate {
     } else {
       cell = tableView.dequeueReusableCellWithIdentifier("LogoutCell", forIndexPath: indexPath)
       (cell as! LogoutCell).logoutCallback = { [unowned self] in
-        self.router.logout()
+        //TODO: perform logout
       }
     }
     
