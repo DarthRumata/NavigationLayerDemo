@@ -45,7 +45,7 @@
 		92BAEBFE1D16DF650005B769 /* SignUpScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenTransaction.swift; sourceTree = "<group>"; };
 		92BAEC001D1748600005B769 /* ProfileScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScreenTransaction.swift; path = ../FeedModule/ProfileScreenTransaction.swift; sourceTree = "<group>"; };
 		92BAEC021D1748F20005B769 /* FeedScreenTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedScreenTransaction.swift; sourceTree = "<group>"; };
-		92DF7B891D12FA560001C6BF /* RouterNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouterNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DF7B891D12FA560001C6BF /* NavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DF7B8C1D12FA560001C6BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92DF7BA21D13E61B0001C6BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92DF7BA71D13E61B0001C6BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		92DF7B801D12FA560001C6BF = {
 			isa = PBXGroup;
 			children = (
-				92DF7B8B1D12FA560001C6BF /* RouterNavigationDemo */,
+				92DF7B8B1D12FA560001C6BF /* NavigationDemo */,
 				92DF7B8A1D12FA560001C6BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,12 +88,12 @@
 		92DF7B8A1D12FA560001C6BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92DF7B891D12FA560001C6BF /* RouterNavigationDemo.app */,
+				92DF7B891D12FA560001C6BF /* NavigationDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		92DF7B8B1D12FA560001C6BF /* RouterNavigationDemo */ = {
+		92DF7B8B1D12FA560001C6BF /* NavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
 				92DF7B8C1D12FA560001C6BF /* AppDelegate.swift */,
@@ -102,6 +102,7 @@
 				92DF7BA01D13E61B0001C6BF /* Flows */,
 				92DF7BA11D13E61B0001C6BF /* Resources */,
 			);
+			name = NavigationDemo;
 			path = RouterNavigationDemo;
 			sourceTree = "<group>";
 		};
@@ -234,9 +235,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92DF7B881D12FA560001C6BF /* RouterNavigationDemo */ = {
+		92DF7B881D12FA560001C6BF /* NavigationDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92DF7B9B1D12FA560001C6BF /* Build configuration list for PBXNativeTarget "RouterNavigationDemo" */;
+			buildConfigurationList = 92DF7B9B1D12FA560001C6BF /* Build configuration list for PBXNativeTarget "NavigationDemo" */;
 			buildPhases = (
 				92DF7B851D12FA560001C6BF /* Sources */,
 				92DF7B861D12FA560001C6BF /* Frameworks */,
@@ -246,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = RouterNavigationDemo;
+			name = NavigationDemo;
 			productName = RouterNavigationDemo;
-			productReference = 92DF7B891D12FA560001C6BF /* RouterNavigationDemo.app */;
+			productReference = 92DF7B891D12FA560001C6BF /* NavigationDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 92DF7B841D12FA560001C6BF /* Build configuration list for PBXProject "RouterNavigationDemo" */;
+			buildConfigurationList = 92DF7B841D12FA560001C6BF /* Build configuration list for PBXProject "NavigationDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -279,7 +280,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92DF7B881D12FA560001C6BF /* RouterNavigationDemo */,
+				92DF7B881D12FA560001C6BF /* NavigationDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -439,8 +440,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/RouterNavigationDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yalantis.com.RouterNavigationDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = yalantis.com.NavigationDemo;
+				PRODUCT_NAME = NavigationDemo;
 			};
 			name = Debug;
 		};
@@ -450,15 +451,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/RouterNavigationDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yalantis.com.RouterNavigationDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = yalantis.com.NavigationDemo;
+				PRODUCT_NAME = NavigationDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		92DF7B841D12FA560001C6BF /* Build configuration list for PBXProject "RouterNavigationDemo" */ = {
+		92DF7B841D12FA560001C6BF /* Build configuration list for PBXProject "NavigationDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92DF7B991D12FA560001C6BF /* Debug */,
@@ -467,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92DF7B9B1D12FA560001C6BF /* Build configuration list for PBXNativeTarget "RouterNavigationDemo" */ = {
+		92DF7B9B1D12FA560001C6BF /* Build configuration list for PBXNativeTarget "NavigationDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92DF7B9C1D12FA560001C6BF /* Debug */,
