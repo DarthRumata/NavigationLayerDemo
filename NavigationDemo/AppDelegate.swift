@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.backgroundColor = .whiteColor()
     window!.makeKeyAndVisible()
     
+    ApplicationCoordinator(window: window!).start()
+    
     return true
   }
 

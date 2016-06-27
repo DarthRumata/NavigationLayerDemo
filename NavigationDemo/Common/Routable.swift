@@ -11,7 +11,7 @@ import UIKit
 
 protocol Routable {
   
-  weak var presenter: UINavigationController? { get }
+  weak var navigationController: UINavigationController? { get }
   
   func present(controller: UIViewController, animated: Bool)
   func push(controller: UIViewController, animated: Bool)
@@ -23,19 +23,19 @@ protocol Routable {
 extension Routable {
   
   func present(controller: UIViewController, animated: Bool) {
-    presenter?.presentViewController(controller, animated: animated, completion: nil)
+    navigationController?.presentViewController(controller, animated: animated, completion: nil)
   }
   
   func push(controller:UIViewController, animated: Bool = true) {
-    presenter?.pushViewController(controller, animated: animated)
+    navigationController?.pushViewController(controller, animated: animated)
   }
   
   func popController(animated: Bool = true) {
-    presenter?.popViewControllerAnimated(animated)
+    navigationController?.popViewControllerAnimated(animated)
   }
   
   func dismissController(animated: Bool = true) {
-    presenter?.dismissViewControllerAnimated(true, completion: nil)
+    navigationController?.dismissViewControllerAnimated(true, completion: nil)
   }
   
 }

@@ -11,20 +11,23 @@ import UIKit
 
 final class ApplicationCoordinator: Coordinator {
   
-  private(set) weak var presenter: UINavigationController?
+  private unowned let window: UIWindow
   
   init(window: UIWindow) {
-    
+    self.window = window
   }
   
   func start() {
     guard let session = UserSessionDemo.restoreSession() else {
-      
+      WelcomeFlowCoordinator(appCoordinator: self, flowCompletionHandler: nil).start()
       return
     }
-    
    
     
+  }
+  
+  func changeRootController(to controller: UIViewController) {
+    window.rootViewController = controller
   }
   
 }

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class WelcomeController: UIViewController {
+class WelcomeController: UIViewController, Coordinatable {
+  
+  var completionHandler: ((WelcomeFlowEvent) -> Void)?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,11 +18,11 @@ class WelcomeController: UIViewController {
   }
 
   @IBAction func presentLogin(sender: AnyObject) {
-   
+    completionHandler?(.ShowLogin)
   }
   
   @IBAction func presentSignUp(sender: AnyObject) {
-   
+    completionHandler?(.ShowSignUp)
   }
   
 }

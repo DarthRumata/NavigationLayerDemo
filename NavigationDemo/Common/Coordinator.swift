@@ -8,13 +8,23 @@
 
 import Foundation
 
-protocol Coordinator: class, Routable {
+protocol Coordinator: class {
   
   func start()
   
 }
 
-protocol FlowController {
+protocol FlowCoordinator: Routable, Coordinator {
+  
+  unowned var appCoordinator: ApplicationCoordinator { get }
+  
+  var flowCompletionHandler: (() -> Void)? { get }
+  
+  init(appCoordinator: ApplicationCoordinator, flowCompletionHandler: (() -> Void)?)
+  
+}
+
+protocol Coordinatable {
   
   associatedtype NavigationEvent
   
