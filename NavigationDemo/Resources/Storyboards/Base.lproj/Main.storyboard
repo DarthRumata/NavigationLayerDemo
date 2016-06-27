@@ -8,7 +8,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="HXO-8H-ov4">
             <objects>
-                <tabBarController id="Ynk-yS-qmn" customClass="MainTabBarController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Ynk-yS-qmn" customClass="MainTabBarController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Lqr-fk-CeW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -22,7 +22,7 @@
         <!--Feed-->
         <scene sceneID="6T8-fu-ADy">
             <objects>
-                <viewController storyboardIdentifier="FeedController" automaticallyAdjustsScrollViewInsets="NO" id="OUh-B6-eRv" customClass="FeedController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedController" automaticallyAdjustsScrollViewInsets="NO" id="OUh-B6-eRv" customClass="FeedController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="glZ-BQ-hBS"/>
                         <viewControllerLayoutGuide type="bottom" id="ZoA-k9-crS"/>
@@ -76,7 +76,7 @@
         <!--Profile-->
         <scene sceneID="fVt-l9-Man">
             <objects>
-                <viewController storyboardIdentifier="ProfileController" automaticallyAdjustsScrollViewInsets="NO" id="kQA-w6-Op6" customClass="ProfileController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileController" automaticallyAdjustsScrollViewInsets="NO" id="kQA-w6-Op6" customClass="ProfileController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Miu-DN-BtN"/>
                         <viewControllerLayoutGuide type="bottom" id="TD6-kU-O9X"/>
@@ -113,7 +113,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogoutCell" id="CPu-HN-aR1" customClass="LogoutCell" customModule="RouterNavigationDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogoutCell" id="CPu-HN-aR1" customClass="LogoutCell" customModule="NavigationDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPu-HN-aR1" id="hTE-yi-1Vk">

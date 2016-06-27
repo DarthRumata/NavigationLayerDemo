@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921116F81D1BE5E300384194 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116F71D1BE5E300384194 /* Routable.swift */; };
+		921116FA1D1BE67C00384194 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116F91D1BE67C00384194 /* Coordinator.swift */; };
+		921116FC1D1BE87800384194 /* WelcomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */; };
+		921116FE1D1BEEC000384194 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */; };
 		92BAEC271D17DD6C0005B769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC051D17DD6C0005B769 /* AppDelegate.swift */; };
 		92BAEC281D17DD6C0005B769 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC091D17DD6C0005B769 /* User.swift */; };
 		92BAEC291D17DD6C0005B769 /* StateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		921116F71D1BE5E300384194 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		921116F91D1BE67C00384194 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeFlowCoordinator.swift; sourceTree = "<group>"; };
+		921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		92BAEC051D17DD6C0005B769 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BAEC091D17DD6C0005B769 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCoder.swift; sourceTree = "<group>"; };
@@ -62,23 +70,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921116F61D1BE5DC00384194 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				921116F71D1BE5E300384194 /* Routable.swift */,
+				921116F91D1BE67C00384194 /* Coordinator.swift */,
+				921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		92BAEC041D17DD6C0005B769 /* NavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
 				92BAEC051D17DD6C0005B769 /* AppDelegate.swift */,
-				92BAEC061D17DD6C0005B769 /* Common */,
+				921116F61D1BE5DC00384194 /* Common */,
 				92BAEC071D17DD6C0005B769 /* Core */,
 				92BAEC0D1D17DD6C0005B769 /* Flows */,
 				92BAEC1C1D17DD6C0005B769 /* Resources */,
 			);
 			path = NavigationDemo;
-			sourceTree = "<group>";
-		};
-		92BAEC061D17DD6C0005B769 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		92BAEC071D17DD6C0005B769 /* Core */ = {
@@ -166,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				92BAEC1B1D17DD6C0005B769 /* WelcomeController.swift */,
+				921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -283,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921116FC1D1BE87800384194 /* WelcomeFlowCoordinator.swift in Sources */,
 				92BAEC2B1D17DD6C0005B769 /* UserSessionPathBuilder.swift in Sources */,
 				92BAEC2C1D17DD6C0005B769 /* LoginController.swift in Sources */,
 				92BAEC301D17DD6C0005B769 /* MainTabBarController.swift in Sources */,
@@ -295,6 +308,9 @@
 				92BAEC2A1D17DD6C0005B769 /* UserSession.swift in Sources */,
 				92BAEC311D17DD6C0005B769 /* SignUpController.swift in Sources */,
 				92BAEC2D1D17DD6C0005B769 /* FeedController.swift in Sources */,
+				921116F81D1BE5E300384194 /* Routable.swift in Sources */,
+				921116FA1D1BE67C00384194 /* Coordinator.swift in Sources */,
+				921116FE1D1BEEC000384194 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
