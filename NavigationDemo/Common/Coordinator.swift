@@ -11,8 +11,9 @@ import Foundation
 protocol Coordinator: class, Routable {
   
   associatedtype EntryPoint
+  associatedtype InputData = Void
   
-  func create() -> EntryPoint
+  func create(input: InputData) -> EntryPoint
   
 }
 

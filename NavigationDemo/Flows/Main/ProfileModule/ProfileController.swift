@@ -41,7 +41,7 @@ extension ProfileController: UITableViewDataSource, UITableViewDelegate {
     } else {
       cell = tableView.dequeueReusableCellWithIdentifier("LogoutCell", forIndexPath: indexPath)
       (cell as! LogoutCell).logoutCallback = { [unowned self] in
-        //TODO: perform logout
+        self.completionHandler?(.Logout)
       }
     }
     

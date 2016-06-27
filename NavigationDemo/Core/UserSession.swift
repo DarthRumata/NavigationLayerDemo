@@ -59,51 +59,65 @@ class UserSessionDemo: RawRepresentable {
   
   // MARK: Public API
   
-  static func restoreSession() -> UserSessionDemo? {
-    guard let sessionId = userDefaults.stringForKey(userSessionRestoreKey) else {
-      return nil
-    }
-    
-    let pathBuilder = PathBuilder(identifier: sessionId, directory: .DocumentDirectory)
-    let coder = StateCoder(URL: pathBuilder.appendingComponent("session").url)
-    let session: UserSessionDemo? = coder.decode()
-
-    return session
-  }
-  
-  static func login(username username: String, completion: (session: UserSessionDemo?, error: NSError?) -> Void) {
-    let demoUser = User(id: "user1", username: username)
-    let session =  UserSessionDemo(id: demoUser.id, user: demoUser)
-    session.saveSession()
-    
-    completion(session: session, error: nil)
-  }
-  
-  static func signUp(username username: String, completion: (session: UserSessionDemo?, error: NSError?) -> Void) {
-    let demoUser = User(id: "user1", username: username)
-    let session =  UserSessionDemo(id: demoUser.id, user: demoUser)
-    session.saveSession()
-    
-    completion(session: session, error: nil)
-  }
-  
   func close() {
     state = .Closed
     userDefaults.removeObjectForKey(userSessionRestoreKey)
   }
+  
+  // MARK: Private API
   
   private func saveSession() {
     userDefaults.setObject(id, forKey: userSessionRestoreKey)
     userDefaults.synchronize()
     
     let url = pathBuilder.url
-      let _ = try? NSFileManager.defaultManager().createDirectoryAtURL(
-        url,
-        withIntermediateDirectories: true, attributes: nil
-      )
+    let _ = try? NSFileManager.defaultManager().createDirectoryAtURL(
+      url,
+      withIntermediateDirectories: true, attributes: nil
+    )
     
     let coder = StateCoder(URL: pathBuilder.appendingComponent("session").url)
     coder.encode(self)
+  }
+  
+}
+
+final class UserSessionController {
+  
+  var currentSession: UserSessionDemo? {
+    return _userSession
+  }
+  
+  private var _userSession: UserSessionDemo!
+  
+  init() {
+    restoreSession()
+  }
+  
+  func restoreSession() {
+    guard let sessionId = userDefaults.stringForKey(userSessionRestoreKey) else {
+      return
+    }
+    
+    let pathBuilder = PathBuilder(identifier: sessionId, directory: .DocumentDirectory)
+    let coder = StateCoder(URL: pathBuilder.appendingComponent("session").url)
+    _userSession = coder.decode()
+  }
+  
+  func login(username username: String, completion: (session: UserSessionDemo?, error: NSError?) -> Void) {
+    let demoUser = User(id: "user1", username: username)
+    _userSession = UserSessionDemo(id: demoUser.id, user: demoUser)
+    _userSession.saveSession()
+    
+    completion(session: _userSession, error: nil)
+  }
+  
+  func signUp(username username: String, completion: (session: UserSessionDemo?, error: NSError?) -> Void) {
+    let demoUser = User(id: "user1", username: username)
+    _userSession = UserSessionDemo(id: demoUser.id, user: demoUser)
+    _userSession.saveSession()
+    
+    completion(session: _userSession, error: nil)
   }
   
 }

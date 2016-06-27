@@ -11,12 +11,15 @@ import UIKit
 
 class SignUpController: UIViewController {
   
+  var completionHandler: ((LoginFlowEvent) -> Void)?
+  weak var userSessionController: UserSessionController!
+  
   @IBOutlet private weak var usernameField: UITextField!
   
   @IBAction func performSignUp(sender: AnyObject) {
-    UserSessionDemo.login(username: usernameField.text!) { [weak self] (session, error) in
-      if let session = session {
-        //TODO: go to main
+    userSessionController.signUp(username: usernameField.text!) { [weak self] (session, error) in
+      if let _self = self where session != nil {
+        _self.completionHandler?(.ShowMainFlow)
       } else if let error = error {
         print(error)
       }
@@ -24,7 +27,7 @@ class SignUpController: UIViewController {
   }
   
   @IBAction func dismiss(sender: AnyObject) {
-    
+    completionHandler?(.Close)
   }
   
 }

@@ -1,5 +1,5 @@
 //
-//  LoginFlowCoordinator.swift
+//  SignUpFlowCoordinator.swift
 //  NavigationDemo
 //
 //  Created by Rumata on 6/27/16.
@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-enum LoginFlowEvent {
-  case Close, ShowMainFlow
-}
-
-class LoginFlowCoordinator: FlowCoordinator {
+class SignUpFlowCoordinator: FlowCoordinator {
   
   weak var navigationContext: UIViewController!
   private(set) unowned var appCoordinator: AppNavigationCoordinator
@@ -25,8 +21,8 @@ class LoginFlowCoordinator: FlowCoordinator {
   }
   
   func create(input: UserSessionController) -> UIViewController {
-    let storyboard = UIStoryboard(name: "Login", bundle: nil)
-    let controller = storyboard.instantiateInitialViewController() as! LoginController
+    let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+    let controller = storyboard.instantiateInitialViewController() as! SignUpController
     controller.userSessionController = input
     controller.completionHandler = { event in
       switch event {
@@ -37,7 +33,7 @@ class LoginFlowCoordinator: FlowCoordinator {
         self.appCoordinator.navigationContext.changeRootController(to: mainEntryPoint)
       }
     }
-
+    
     navigationContext = controller
     
     return navigationContext

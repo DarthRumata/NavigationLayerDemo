@@ -24,17 +24,19 @@ class MainTabBarCoordinator: FlowCoordinator {
     self.flowCompletionHandler = flowCompletionHandler
   }
   
-  func create() -> UITabBarController {
+  func create(input: UserSessionController) -> UITabBarController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let tabController = storyboard.instantiateInitialViewController() as! MainTabBarController
     
     let feedController = storyboard.instantiateViewControllerWithIdentifier("FeedController")
     let profileController = storyboard.instantiateViewControllerWithIdentifier("ProfileController") as! ProfileController
+    profileController.userSession = input.currentSession!
     profileController.completionHandler = { event in
       switch event {
       case .Logout:
-        let welcomeEntryPoint = WelcomeFlowCoordinator(appCoordinator: self.appCoordinator, flowCompletionHandler: nil)
-        route(with: .ChangeRootTo(controller: welcomeEntryPoint), animated: false)
+        input.currentSession!.close()
+        let welcomeEntryPoint = WelcomeFlowCoordinator(appCoordinator: self.appCoordinator, flowCompletionHandler: nil).create(input)
+        self.appCoordinator.navigationContext.changeRootController(to: welcomeEntryPoint)
       }
     }
     tabController.setViewControllers([feedController, profileController], animated: false)

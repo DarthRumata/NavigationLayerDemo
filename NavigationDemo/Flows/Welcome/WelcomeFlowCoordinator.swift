@@ -24,19 +24,23 @@ class WelcomeFlowCoordinator: FlowCoordinator {
     self.flowCompletionHandler = flowCompletionHandler
   }
   
-  func create() -> WelcomeController {
+  func create(input: UserSessionController) -> WelcomeController {
     let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
     let controller = storyboard.instantiateInitialViewController() as! WelcomeController
     controller.completionHandler = { event in
       switch event {
       case .ShowLogin:
-        let loginEntryPoint = LoginFlowCoordinator(
+        let entryPoint = LoginFlowCoordinator(
           appCoordinator: self.appCoordinator,
           flowCompletionHandler: nil
-          ).create()
-        self.route(with: .Present(controller: loginEntryPoint), animated: true)
+          ).create(input)
+        self.navigationContext.presentViewController(entryPoint, animated: true, completion: nil)
       case .ShowSignUp:
-        print("show sign up")
+        let entryPoint = SignUpFlowCoordinator(
+          appCoordinator: self.appCoordinator,
+          flowCompletionHandler: nil
+          ).create(input)
+        self.navigationContext.presentViewController(entryPoint, animated: true, completion: nil)
       }
     }
     navigationContext = controller

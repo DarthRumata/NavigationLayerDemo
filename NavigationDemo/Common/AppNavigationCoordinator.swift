@@ -17,15 +17,16 @@ final class AppNavigationCoordinator: Coordinator {
     self.navigationContext = window
   }
   
-  func create() {
-    guard let session = UserSessionDemo.restoreSession() else {
-      let entryPoint = WelcomeFlowCoordinator(appCoordinator: self, flowCompletionHandler: nil).create()
-      route(with: .ChangeRootTo(controller: entryPoint), animated: false)
+  func create(input: UserSessionController) {
+    guard input.currentSession != nil else {
+      let entryPoint = WelcomeFlowCoordinator(appCoordinator: self, flowCompletionHandler: nil).create(input)
+      navigationContext.rootViewController = entryPoint
       
       return
     }
    
-    // TODO: Add mainflow
+    let mainEntryPoint = MainTabBarCoordinator(appCoordinator: self, flowCompletionHandler: nil).create(input)
+    navigationContext.changeRootController(to: mainEntryPoint)
   }
   
 }

@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   private var coordinator: AppNavigationCoordinator!
+  private let userSessionController = UserSessionController()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow()
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.makeKeyAndVisible()
     
     coordinator = AppNavigationCoordinator(window: window!)
-    coordinator.create()
+    coordinator.create(userSessionController)
      
     return true
   }

@@ -12,13 +12,14 @@ import UIKit
 class LoginController: UIViewController, Coordinatable {
   
   var completionHandler: ((LoginFlowEvent) -> Void)?
+  weak var userSessionController: UserSessionController!
   
   @IBOutlet private weak var usernameField: UITextField!
   
   @IBAction func performLogin(sender: AnyObject) {
-    UserSessionDemo.login(username: usernameField.text!) { [weak self] (session, error) in
-      if let session = session, _self = self {
-        _self.completionHandler?(.ShowMainFlow(session: session))
+    userSessionController.login(username: usernameField.text!) { [weak self] (session, error) in
+      if let _self = self where session != nil {
+        _self.completionHandler?(.ShowMainFlow)
       } else if let error = error {
         print(error)
       }
