@@ -15,27 +15,33 @@ enum WelcomeFlowEvent {
 
 class WelcomeFlowCoordinator: FlowCoordinator {
   
-  private(set) weak var navigationController: UINavigationController?
-  private(set) unowned var appCoordinator: ApplicationCoordinator
+  weak var navigationContext: UIViewController!
+  private(set) unowned var appCoordinator: AppNavigationCoordinator
   var flowCompletionHandler: (() -> Void)?
   
-  required init(appCoordinator: ApplicationCoordinator, flowCompletionHandler: (() -> Void)?) {
+  required init(appCoordinator: AppNavigationCoordinator, flowCompletionHandler: (() -> Void)?) {
     self.appCoordinator = appCoordinator
     self.flowCompletionHandler = flowCompletionHandler
   }
   
-  func start() {
+  func create() -> WelcomeController {
     let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
     let controller = storyboard.instantiateInitialViewController() as! WelcomeController
     controller.completionHandler = { event in
       switch event {
       case .ShowLogin:
-        print("show login")
+        let loginEntryPoint = LoginFlowCoordinator(
+          appCoordinator: self.appCoordinator,
+          flowCompletionHandler: nil
+          ).create()
+        self.route(with: .Present(controller: loginEntryPoint), animated: true)
       case .ShowSignUp:
         print("show sign up")
       }
     }
-    appCoordinator.changeRootController(to: controller)
+    navigationContext = controller
+    
+    return controller
   }
   
 }

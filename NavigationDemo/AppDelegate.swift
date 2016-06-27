@@ -12,15 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  private var coordinator: AppNavigationCoordinator!
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow()
     window!.backgroundColor = .whiteColor()
     window!.makeKeyAndVisible()
     
-    ApplicationCoordinator(window: window!).start()
-    
+    coordinator = AppNavigationCoordinator(window: window!)
+    coordinator.create()
+     
     return true
   }
 

@@ -10,7 +10,9 @@
 		921116F81D1BE5E300384194 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116F71D1BE5E300384194 /* Routable.swift */; };
 		921116FA1D1BE67C00384194 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116F91D1BE67C00384194 /* Coordinator.swift */; };
 		921116FC1D1BE87800384194 /* WelcomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */; };
-		921116FE1D1BEEC000384194 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */; };
+		921116FE1D1BEEC000384194 /* AppNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921116FD1D1BEEC000384194 /* AppNavigationCoordinator.swift */; };
+		921117271D214B9A00384194 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921117261D214B9A00384194 /* LoginFlowCoordinator.swift */; };
+		921117291D214FEC00384194 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921117281D214FEC00384194 /* MainTabBarCoordinator.swift */; };
 		92BAEC271D17DD6C0005B769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC051D17DD6C0005B769 /* AppDelegate.swift */; };
 		92BAEC281D17DD6C0005B769 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC091D17DD6C0005B769 /* User.swift */; };
 		92BAEC291D17DD6C0005B769 /* StateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */; };
@@ -36,7 +38,9 @@
 		921116F71D1BE5E300384194 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		921116F91D1BE67C00384194 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeFlowCoordinator.swift; sourceTree = "<group>"; };
-		921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		921116FD1D1BEEC000384194 /* AppNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationCoordinator.swift; sourceTree = "<group>"; };
+		921117261D214B9A00384194 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
+		921117281D214FEC00384194 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		92BAEC051D17DD6C0005B769 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BAEC091D17DD6C0005B769 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCoder.swift; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 			children = (
 				921116F71D1BE5E300384194 /* Routable.swift */,
 				921116F91D1BE67C00384194 /* Coordinator.swift */,
-				921116FD1D1BEEC000384194 /* ApplicationCoordinator.swift */,
+				921116FD1D1BEEC000384194 /* AppNavigationCoordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				92BAEC0F1D17DD6C0005B769 /* LoginController.swift */,
+				921117261D214B9A00384194 /* LoginFlowCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				92BAEC171D17DD6C0005B769 /* MainTabBarController.swift */,
+				921117281D214FEC00384194 /* MainTabBarCoordinator.swift */,
 			);
 			path = TabBarModule;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921117271D214B9A00384194 /* LoginFlowCoordinator.swift in Sources */,
 				921116FC1D1BE87800384194 /* WelcomeFlowCoordinator.swift in Sources */,
 				92BAEC2B1D17DD6C0005B769 /* UserSessionPathBuilder.swift in Sources */,
+				921117291D214FEC00384194 /* MainTabBarCoordinator.swift in Sources */,
 				92BAEC2C1D17DD6C0005B769 /* LoginController.swift in Sources */,
 				92BAEC301D17DD6C0005B769 /* MainTabBarController.swift in Sources */,
 				92BAEC281D17DD6C0005B769 /* User.swift in Sources */,
@@ -310,7 +318,7 @@
 				92BAEC2D1D17DD6C0005B769 /* FeedController.swift in Sources */,
 				921116F81D1BE5E300384194 /* Routable.swift in Sources */,
 				921116FA1D1BE67C00384194 /* Coordinator.swift in Sources */,
-				921116FE1D1BEEC000384194 /* ApplicationCoordinator.swift in Sources */,
+				921116FE1D1BEEC000384194 /* AppNavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

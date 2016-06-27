@@ -8,10 +8,17 @@
 
 import UIKit
 
+enum WelcomeEvent {
+  
+  case Completed
+}
+
 class WelcomeController: UIViewController, Coordinatable {
   
   var completionHandler: ((WelcomeFlowEvent) -> Void)?
 
+  var dispatch: (WelcomeEvent -> Void)?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

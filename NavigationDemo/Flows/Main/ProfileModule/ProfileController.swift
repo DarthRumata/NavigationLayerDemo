@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class ProfileController: UIViewController {
+class ProfileController: UIViewController, Coordinatable {
+  
+  var completionHandler: ((MainTabBarFlowEvent) -> Void)?
   
   weak var userSession: UserSessionDemo!
   
