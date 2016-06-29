@@ -16,11 +16,9 @@ enum WelcomeFlowEvent {
 class WelcomeFlowCoordinator: FlowCoordinator {
   
   weak var navigationContext: UIViewController!
-  private(set) unowned var appCoordinator: AppNavigationCoordinator
-  var flowCompletionHandler: (() -> Void)?
+  var flowCompletionHandler: FlowCompletionHandler?
   
-  required init(appCoordinator: AppNavigationCoordinator, flowCompletionHandler: (() -> Void)?) {
-    self.appCoordinator = appCoordinator
+  required init(flowCompletionHandler: FlowCompletionHandler?) {
     self.flowCompletionHandler = flowCompletionHandler
   }
   
@@ -30,14 +28,12 @@ class WelcomeFlowCoordinator: FlowCoordinator {
       switch event {
       case .ShowLogin:
         let entryPoint = LoginFlowCoordinator(
-          appCoordinator: self.appCoordinator,
-          flowCompletionHandler: nil
+          flowCompletionHandler: self.flowCompletionHandler
           ).create(input)
         self.navigationContext.presentViewController(entryPoint, animated: true, completion: nil)
       case .ShowSignUp:
         let entryPoint = SignUpFlowCoordinator(
-          appCoordinator: self.appCoordinator,
-          flowCompletionHandler: nil
+          flowCompletionHandler: self.flowCompletionHandler
           ).create(input)
         self.navigationContext.presentViewController(entryPoint, animated: true, completion: nil)
       }

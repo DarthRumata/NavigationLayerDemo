@@ -19,11 +19,9 @@ protocol Coordinator: class, Routable {
 
 protocol FlowCoordinator: Coordinator {
   
-  unowned var appCoordinator: AppNavigationCoordinator { get }
+  var flowCompletionHandler: FlowCompletionHandler? { get }
   
-  var flowCompletionHandler: (() -> Void)? { get }
-  
-  init(appCoordinator: AppNavigationCoordinator, flowCompletionHandler: (() -> Void)?)
+  init(flowCompletionHandler: FlowCompletionHandler?)
   
 }
 
@@ -31,6 +29,6 @@ protocol Coordinatable {
   
   associatedtype NavigationEvent
   
-  var completionHandler: ((NavigationEvent) -> Void)? { get }
+  var completionHandler: (NavigationEvent -> Void)? { get }
   
 }

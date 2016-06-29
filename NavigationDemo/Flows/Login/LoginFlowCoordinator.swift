@@ -16,11 +16,9 @@ enum LoginFlowEvent {
 class LoginFlowCoordinator: FlowCoordinator {
   
   weak var navigationContext: UIViewController!
-  private(set) unowned var appCoordinator: AppNavigationCoordinator
-  var flowCompletionHandler: (() -> Void)?
+  var flowCompletionHandler: FlowCompletionHandler?
   
-  required init(appCoordinator: AppNavigationCoordinator, flowCompletionHandler: (() -> Void)?) {
-    self.appCoordinator = appCoordinator
+  required init(flowCompletionHandler: FlowCompletionHandler?) {
     self.flowCompletionHandler = flowCompletionHandler
   }
   
@@ -32,8 +30,7 @@ class LoginFlowCoordinator: FlowCoordinator {
       case .Close:
         self.navigationContext.dismissViewControllerAnimated(true, completion: nil)
       case .ShowMainFlow():
-        let mainEntryPoint = MainTabBarCoordinator(appCoordinator: self.appCoordinator, flowCompletionHandler: nil).create(input)
-        self.appCoordinator.navigationContext.changeRootController(to: mainEntryPoint)
+        self.flowCompletionHandler?(.PresentMainFlow)
       }
     }
 

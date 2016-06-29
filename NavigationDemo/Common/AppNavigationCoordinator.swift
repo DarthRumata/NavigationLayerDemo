@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+typealias FlowCompletionHandler = AppNavigationEvent -> Void
+
+enum AppNavigationEvent {
+  case PresentWelcomeFlow, PresentMainFlow
+}
+
 final class AppNavigationCoordinator: Coordinator {
   
   weak var navigationContext: UIWindow!
@@ -18,15 +24,36 @@ final class AppNavigationCoordinator: Coordinator {
   }
   
   func create(input: UserSessionController) {
-    guard input.currentSession != nil else {
-      let entryPoint = WelcomeFlowCoordinator(appCoordinator: self, flowCompletionHandler: nil).create(input)
+    var appHandler: FlowCompletionHandler!
+    
+    func presentWelcomeFlow() {
+      let entryPoint = WelcomeFlowCoordinator(flowCompletionHandler: appHandler).create(input)
       navigationContext.rootViewController = entryPoint
+    }
+    
+    func presentMainFlow() {
+      let mainEntryPoint = MainTabBarCoordinator(flowCompletionHandler: appHandler).create(input)
+      navigationContext.changeRootController(to: mainEntryPoint)
+    }
+    
+    appHandler = { event in
+      switch event {
+      case .PresentWelcomeFlow:
+        presentWelcomeFlow()
+      case .PresentMainFlow:
+        presentMainFlow()
+      }
+    }
+    
+    guard input.currentSession != nil else {
+      presentWelcomeFlow()
       
       return
     }
-   
-    let mainEntryPoint = MainTabBarCoordinator(appCoordinator: self, flowCompletionHandler: nil).create(input)
-    navigationContext.changeRootController(to: mainEntryPoint)
+
+    presentMainFlow()
   }
+  
+ 
   
 }

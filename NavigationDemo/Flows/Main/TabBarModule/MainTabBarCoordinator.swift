@@ -16,11 +16,9 @@ enum MainTabBarFlowEvent {
 class MainTabBarCoordinator: FlowCoordinator {
   
   private(set) weak var navigationContext: UITabBarController!
-  private(set) unowned var appCoordinator: AppNavigationCoordinator
-  var flowCompletionHandler: (() -> Void)?
+  var flowCompletionHandler: FlowCompletionHandler?
   
-  required init(appCoordinator: AppNavigationCoordinator, flowCompletionHandler: (() -> Void)?) {
-    self.appCoordinator = appCoordinator
+  required init(flowCompletionHandler: FlowCompletionHandler?) {
     self.flowCompletionHandler = flowCompletionHandler
   }
   
@@ -35,8 +33,7 @@ class MainTabBarCoordinator: FlowCoordinator {
       switch event {
       case .Logout:
         input.currentSession!.close()
-        let welcomeEntryPoint = WelcomeFlowCoordinator(appCoordinator: self.appCoordinator, flowCompletionHandler: nil).create(input)
-        self.appCoordinator.navigationContext.changeRootController(to: welcomeEntryPoint)
+        self.flowCompletionHandler?(.PresentWelcomeFlow)
       }
     }
     tabController.setViewControllers([feedController, profileController], animated: false)
