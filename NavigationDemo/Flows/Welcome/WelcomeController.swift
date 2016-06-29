@@ -7,22 +7,16 @@
 //
 
 import UIKit
+import SegueManager
 
 enum WelcomeEvent {
   
   case Completed
 }
 
-class WelcomeController: UIViewController, Coordinatable {
+class WelcomeController: SegueManagerViewController, Coordinatable {
   
-  var completionHandler: ((WelcomeFlowEvent) -> Void)?
-
-  var dispatch: (WelcomeEvent -> Void)?
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
+  var completionHandler: (WelcomeFlowEvent -> Void)?
 
   @IBAction func presentLogin(sender: AnyObject) {
     completionHandler?(.ShowLogin)
@@ -32,5 +26,8 @@ class WelcomeController: UIViewController, Coordinatable {
     completionHandler?(.ShowSignUp)
   }
   
+  @IBAction func presentAboutApp(sender: AnyObject) {
+    completionHandler?(.ShowAboutApp)
+  }
 }
 

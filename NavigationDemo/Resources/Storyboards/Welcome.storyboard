@@ -8,7 +8,7 @@
         <!--Welcome Controller-->
         <scene sceneID="Joh-O0-e2C">
             <objects>
-                <viewController id="sSy-7q-arx" customClass="WelcomeController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sSy-7q-arx" customClass="WelcomeController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Y2-LS-V02"/>
                         <viewControllerLayoutGuide type="bottom" id="CM7-0x-Ef4"/>
@@ -37,6 +37,13 @@
                                     <action selector="presentLogin:" destination="sSy-7q-arx" eventType="touchUpInside" id="DXA-v2-GSp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66f-gb-c6b">
+                                <rect key="frame" x="279" y="536" width="42" height="30"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <action selector="presentAboutApp:" destination="sSy-7q-arx" eventType="touchUpInside" id="byk-vu-Adf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -44,15 +51,28 @@
                             <constraint firstItem="QRB-nD-Xsz" firstAttribute="centerX" secondItem="AgT-g4-9oM" secondAttribute="centerX" id="Jck-Xy-YOl"/>
                             <constraint firstItem="AgT-g4-9oM" firstAttribute="centerX" secondItem="xIZ-YU-HDG" secondAttribute="centerX" id="cYA-b9-5sJ"/>
                             <constraint firstItem="QRB-nD-Xsz" firstAttribute="top" secondItem="AgT-g4-9oM" secondAttribute="bottom" constant="20" id="eQs-ZC-CXl"/>
+                            <constraint firstItem="CM7-0x-Ef4" firstAttribute="top" secondItem="66f-gb-c6b" secondAttribute="bottom" constant="34" id="gWz-51-N4p"/>
+                            <constraint firstItem="66f-gb-c6b" firstAttribute="centerX" secondItem="YZ6-WU-fzs" secondAttribute="centerX" id="rAJ-UC-Obz"/>
                             <constraint firstItem="AgT-g4-9oM" firstAttribute="top" secondItem="xIZ-YU-HDG" secondAttribute="bottom" constant="20" id="u8a-hb-dy1"/>
                             <constraint firstAttribute="trailing" secondItem="xIZ-YU-HDG" secondAttribute="trailing" constant="45" id="ufO-KN-NjP"/>
                             <constraint firstItem="xIZ-YU-HDG" firstAttribute="top" secondItem="5Y2-LS-V02" secondAttribute="bottom" constant="55" id="xKs-dR-oTH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="ksA-ad-cYu" kind="presentation" identifier="presentAboutApp" id="tka-IX-nXG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUR-ts-0Xw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="413" y="471"/>
+        </scene>
+        <!--WebController-->
+        <scene sceneID="fid-sY-8kt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Support" referencedIdentifier="WebController" id="ksA-ad-cYu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUc-SP-9qO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413" y="942"/>
         </scene>
     </scenes>
 </document>

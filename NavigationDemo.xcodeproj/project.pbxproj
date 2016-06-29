@@ -16,7 +16,8 @@
 		921117291D214FEC00384194 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921117281D214FEC00384194 /* MainTabBarCoordinator.swift */; };
 		9211172D1D21BC7D00384194 /* SignUpFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211172C1D21BC7D00384194 /* SignUpFlowCoordinator.swift */; };
 		921117331D21D51400384194 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921117321D21D51400384194 /* R.generated.swift */; };
-		927FB7171D23FA7A001F8300 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 927FB7161D23FA7A001F8300 /* Podfile */; };
+		927FB7191D240476001F8300 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FB7181D240476001F8300 /* WebController.swift */; };
+		927FB71B1D240F50001F8300 /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927FB71A1D240F50001F8300 /* Support.storyboard */; };
 		92BAEC271D17DD6C0005B769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC051D17DD6C0005B769 /* AppDelegate.swift */; };
 		92BAEC281D17DD6C0005B769 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC091D17DD6C0005B769 /* User.swift */; };
 		92BAEC291D17DD6C0005B769 /* StateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */; };
@@ -47,7 +48,8 @@
 		921117281D214FEC00384194 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		9211172C1D21BC7D00384194 /* SignUpFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFlowCoordinator.swift; sourceTree = "<group>"; };
 		921117321D21D51400384194 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		927FB7161D23FA7A001F8300 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		927FB7181D240476001F8300 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		927FB71A1D240F50001F8300 /* Support.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		92BAEC051D17DD6C0005B769 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BAEC091D17DD6C0005B769 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		92BAEC0A1D17DD6C0005B769 /* StateCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCoder.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				92BAEC1B1D17DD6C0005B769 /* WelcomeController.swift */,
 				921116FB1D1BE87800384194 /* WelcomeFlowCoordinator.swift */,
+				927FB7181D240476001F8300 /* WebController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -211,7 +214,6 @@
 		92BAEC1C1D17DD6C0005B769 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				927FB7161D23FA7A001F8300 /* Podfile */,
 				921117321D21D51400384194 /* R.generated.swift */,
 				92BAEC1D1D17DD6C0005B769 /* Assets.xcassets */,
 				92BAEC1E1D17DD6C0005B769 /* Info.plist */,
@@ -228,6 +230,7 @@
 				92BAEC241D17DD6C0005B769 /* Login.storyboard */,
 				92BAEC251D17DD6C0005B769 /* SignUp.storyboard */,
 				92BAEC261D17DD6C0005B769 /* Welcome.storyboard */,
+				927FB71A1D240F50001F8300 /* Support.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -325,7 +328,7 @@
 				92BAEC331D17DD6C0005B769 /* Assets.xcassets in Resources */,
 				92BAEC371D17DD6C0005B769 /* Login.storyboard in Resources */,
 				92BAEC361D17DD6C0005B769 /* Main.storyboard in Resources */,
-				927FB7171D23FA7A001F8300 /* Podfile in Resources */,
+				927FB71B1D240F50001F8300 /* Support.storyboard in Resources */,
 				92BAEC391D17DD6C0005B769 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +420,7 @@
 				9211172D1D21BC7D00384194 /* SignUpFlowCoordinator.swift in Sources */,
 				921116F81D1BE5E300384194 /* Routable.swift in Sources */,
 				921116FA1D1BE67C00384194 /* Coordinator.swift in Sources */,
+				927FB7191D240476001F8300 /* WebController.swift in Sources */,
 				921116FE1D1BEEC000384194 /* AppNavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

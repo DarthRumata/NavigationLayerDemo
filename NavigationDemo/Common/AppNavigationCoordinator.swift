@@ -18,21 +18,24 @@ enum AppNavigationEvent {
 final class AppNavigationCoordinator: Coordinator {
   
   weak var navigationContext: UIWindow!
+  private let userSessionController: UserSessionController
   
-  init(window: UIWindow) {
+  init(window: UIWindow, userSessionController: UserSessionController) {
     self.navigationContext = window
+    self.userSessionController = userSessionController
   }
   
-  func create(input: UserSessionController) {
+  func create(input: Void) {
     var appHandler: FlowCompletionHandler!
     
     func presentWelcomeFlow() {
-      let entryPoint = WelcomeFlowCoordinator(flowCompletionHandler: appHandler).create(input)
+      let entryPoint = WelcomeFlowCoordinator(flowCompletionHandler: appHandler).create(userSessionController)
+      entryPoint
       navigationContext.rootViewController = entryPoint
     }
     
     func presentMainFlow() {
-      let mainEntryPoint = MainTabBarCoordinator(flowCompletionHandler: appHandler).create(input)
+      let mainEntryPoint = MainTabBarCoordinator(flowCompletionHandler: appHandler).create(userSessionController)
       navigationContext.changeRootController(to: mainEntryPoint)
     }
     
@@ -45,7 +48,7 @@ final class AppNavigationCoordinator: Coordinator {
       }
     }
     
-    guard input.currentSession != nil else {
+    guard userSessionController.currentSession != nil else {
       presentWelcomeFlow()
       
       return

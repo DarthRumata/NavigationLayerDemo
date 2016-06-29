@@ -8,7 +8,7 @@
         <!--Login Controller-->
         <scene sceneID="al5-Yr-hrz">
             <objects>
-                <viewController id="u5U-1r-P8Y" customClass="LoginController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u5U-1r-P8Y" customClass="LoginController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4uJ-8A-CQd"/>
                         <viewControllerLayoutGuide type="bottom" id="Orf-ya-6Fx"/>

@@ -8,7 +8,7 @@
         <!--Sign Up Controller-->
         <scene sceneID="lNN-V8-0Ow">
             <objects>
-                <viewController id="2j0-25-8wY" customClass="SignUpController" customModule="RouterNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2j0-25-8wY" customClass="SignUpController" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H0J-Kp-qTM"/>
                         <viewControllerLayoutGuide type="bottom" id="eMx-p8-0Id"/>

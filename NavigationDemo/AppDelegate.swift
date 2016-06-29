@@ -12,15 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  private let userSessionController = UserSessionController()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow()
     window!.backgroundColor = .whiteColor()
     window!.makeKeyAndVisible()
     
-    let coordinator = AppNavigationCoordinator(window: window!)
-    coordinator.create(userSessionController)
+    let userSessionController = UserSessionController()
+    let coordinator = AppNavigationCoordinator(window: window!, userSessionController: userSessionController)
+    coordinator.create()
      
     return true
   }

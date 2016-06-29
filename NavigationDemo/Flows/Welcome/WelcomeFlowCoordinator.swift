@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import SegueManager
 
 enum WelcomeFlowEvent {
-  case ShowLogin, ShowSignUp
+  case ShowLogin, ShowSignUp, ShowAboutApp
 }
 
 class WelcomeFlowCoordinator: FlowCoordinator {
@@ -36,6 +37,10 @@ class WelcomeFlowCoordinator: FlowCoordinator {
           flowCompletionHandler: self.flowCompletionHandler
           ).create(input)
         self.navigationContext.presentViewController(entryPoint, animated: true, completion: nil)
+      case .ShowAboutApp:
+        controller.performSegue(R.segue.welcomeController.presentAboutApp) { segue in
+          segue.destinationViewController.path = "http://news.google.com"
+        }
       }
     }
     navigationContext = controller
