@@ -25,11 +25,11 @@ class MainTabBarCoordinator: FlowCoordinator {
   }
   
   func create(input: UserSessionController) -> UITabBarController {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let tabController = storyboard.instantiateInitialViewController() as! MainTabBarController
+    let storyboard = R.storyboard.main
+    let tabController = storyboard.initialViewController()!
     
-    let feedController = storyboard.instantiateViewControllerWithIdentifier("FeedController")
-    let profileController = storyboard.instantiateViewControllerWithIdentifier("ProfileController") as! ProfileController
+    let feedController = storyboard.feedController()!
+    let profileController = storyboard.profileController()!
     profileController.userSession = input.currentSession!
     profileController.completionHandler = { event in
       switch event {

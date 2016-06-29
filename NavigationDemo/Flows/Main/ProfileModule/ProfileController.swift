@@ -36,10 +36,16 @@ extension ProfileController: UITableViewDataSource, UITableViewDelegate {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell
     if indexPath.row == 0 {
-      cell = tableView.dequeueReusableCellWithIdentifier("UsernameCell", forIndexPath: indexPath)
+      cell = tableView.dequeueReusableCellWithIdentifier(
+        R.reuseIdentifier.usernameCell.identifier,
+        forIndexPath: indexPath
+      )
       cell.detailTextLabel?.text = userSession.currentUser.username
     } else {
-      cell = tableView.dequeueReusableCellWithIdentifier("LogoutCell", forIndexPath: indexPath)
+      cell = tableView.dequeueReusableCellWithIdentifier(
+        R.reuseIdentifier.logoutCell.identifier,
+        forIndexPath: indexPath
+      )
       (cell as! LogoutCell).logoutCallback = { [unowned self] in
         self.completionHandler?(.Logout)
       }

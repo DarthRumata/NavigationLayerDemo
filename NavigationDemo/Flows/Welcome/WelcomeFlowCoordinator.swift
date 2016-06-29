@@ -25,8 +25,7 @@ class WelcomeFlowCoordinator: FlowCoordinator {
   }
   
   func create(input: UserSessionController) -> WelcomeController {
-    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-    let controller = storyboard.instantiateInitialViewController() as! WelcomeController
+    let controller = R.storyboard.welcome.initialViewController()!
     controller.completionHandler = { event in
       switch event {
       case .ShowLogin:

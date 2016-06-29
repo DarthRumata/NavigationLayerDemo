@@ -25,8 +25,7 @@ class LoginFlowCoordinator: FlowCoordinator {
   }
   
   func create(input: UserSessionController) -> UIViewController {
-    let storyboard = UIStoryboard(name: "Login", bundle: nil)
-    let controller = storyboard.instantiateInitialViewController() as! LoginController
+    let controller = R.storyboard.login.initialViewController()!
     controller.userSessionController = input
     controller.completionHandler = { event in
       switch event {

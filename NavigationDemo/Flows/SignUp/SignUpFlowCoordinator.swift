@@ -21,8 +21,7 @@ class SignUpFlowCoordinator: FlowCoordinator {
   }
   
   func create(input: UserSessionController) -> UIViewController {
-    let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
-    let controller = storyboard.instantiateInitialViewController() as! SignUpController
+    let controller = R.storyboard.signUp.initialViewController()!
     controller.userSessionController = input
     controller.completionHandler = { event in
       switch event {
