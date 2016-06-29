@@ -7,5 +7,6 @@ target 'NavigationDemo' do
 
   # Pods for NavigationDemo
   pod 'R.swift'
+  pod 'SegueManager'
 
 end
